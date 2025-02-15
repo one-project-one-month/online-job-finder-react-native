@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   logo: {
-    width: 70,
-    height: 70,
+    width: 40,
+    height: 40,
     marginBottom: 20,
   },
   progress: {

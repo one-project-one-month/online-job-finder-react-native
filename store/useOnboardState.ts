@@ -27,6 +27,7 @@ const storage: StateStorage = {
 
 type AuthState = {
   isOnboarded: boolean;
+  isLoaded: boolean;
   setIsOnboarded: (isOnboarded: boolean) => void;
 };
 
@@ -39,6 +40,7 @@ const useOnboardState = create<AuthState>(
   (persist as AuthPersist)(
     (set) => ({
       isOnboarded: false,
+      isLoaded: true,
       setIsOnboarded: (isOnboarded: boolean) => set({ isOnboarded }),
     }),
     {
