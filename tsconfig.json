@@ -3,7 +3,12 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ],
+      "tailwind.config": [
+        "./tailwind.config.js"
+      ]
     }
   },
   "include": [
@@ -11,6 +16,7 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "components/screens/SplashScreenPage.jsx"
+    "components/screens/SplashScreenPage.jsx",
+    "nativewind-env.d.ts"
   ]
 }

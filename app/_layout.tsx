@@ -1,4 +1,6 @@
 import SplashScreenPage from "@/components/screens/SplashScreenPage";
+import "@/global.css";
+import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { SessionProvider } from "@/provider/ctx";
 import { useFonts } from "expo-font";
 import { Slot, SplashScreen } from "expo-router";
@@ -21,11 +23,17 @@ export default function Root() {
   }
   // Set up the auth context and render our layout inside of it.
   if (!isReady) {
-    return <SplashScreenPage onFinish={() => setIsReady(true)} />;
+    return (
+      <GluestackUIProvider mode="light">
+        <SplashScreenPage onFinish={() => setIsReady(true)} />
+      </GluestackUIProvider>
+    );
   }
   return (
-    <SessionProvider>
-      <Slot />
-    </SessionProvider>
+    <GluestackUIProvider mode="light">
+      <SessionProvider>
+        <Slot />
+      </SessionProvider>
+    </GluestackUIProvider>
   );
 }

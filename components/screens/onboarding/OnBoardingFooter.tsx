@@ -47,6 +47,7 @@ function OnBoardingFooter({
               paddingVertical: 15,
               borderRadius: 10,
               width: 250,
+              height: 56,
             }}
             onPress={() => {
               setIsOnboarded(true);
@@ -73,6 +74,7 @@ function OnBoardingFooter({
               paddingVertical: 15,
               borderRadius: 10,
               width: 120,
+              height: 56,
             }}
           >
             <Text style={{ textAlign: "center" }}>Skip</Text>
@@ -85,6 +87,7 @@ function OnBoardingFooter({
               paddingVertical: 15,
               borderRadius: 10,
               width: 120,
+              height: 56,
             }}
           >
             <Text style={{ color: "#fff", textAlign: "center" }}>Next</Text>
