@@ -3,9 +3,7 @@ import React from "react";
 import { Platform } from "react-native";
 
 import { HapticTab } from "@/components/HapticTab";
-import { IconSymbol } from "@/components/ui/IconSymbol";
 import TabBarBackground from "@/components/ui/TabBarBackground";
-import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import HomeIconSvg from "@/assets/images/icons/HomeIconSvg";
 import SaveIconSvg from "@/assets/images/icons/SaveIconSvg";
@@ -13,6 +11,7 @@ import CategoryIconSvg from "@/assets/images/icons/CategoryIconSvg";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const showHiddenTab = false;
 
   return (
     <Tabs
@@ -52,12 +51,18 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="(setting)/setting"
         options={{
-          title: "Profile",
+          title: "Setting",
           tabBarIcon: ({ focused, size, color }) => (
             <CategoryIconSvg focused={focused} size={size} color={color} />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
