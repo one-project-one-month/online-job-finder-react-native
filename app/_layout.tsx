@@ -25,7 +25,9 @@ export default function Root() {
   if (!isReady) {
     return (
       <GluestackUIProvider mode="light">
-        <SplashScreenPage onFinish={() => setIsReady(true)} />
+        <SessionProvider>
+          <SplashScreenPage onFinish={() => setIsReady(true)} />
+        </SessionProvider>
       </GluestackUIProvider>
     );
   }

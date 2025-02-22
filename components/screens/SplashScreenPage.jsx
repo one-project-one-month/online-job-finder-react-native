@@ -4,10 +4,12 @@ import * as SplashScreen from "expo-splash-screen";
 import ProgressBar from "react-native-progress/Bar";
 import LogoSvg from "@/assets/images/icons/LogoSvg";
 import { StatusBar } from "expo-status-bar";
+import { useSession } from "@/provider/ctx";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function SplashScreenPage({ onFinish }) {
+  const { isLoading } = useSession();
   const progress = useRef(new Animated.Value(0)).current;
   const [progressValue, setProgressValue] = useState(0); // Store progress as a number
 
@@ -25,7 +27,7 @@ export default function SplashScreenPage({ onFinish }) {
       useNativeDriver: false,
     }).start(async () => {
       await SplashScreen.hideAsync();
-      if (onFinish) onFinish();
+      if (onFinish && !isLoading) onFinish();
     });
 
     // Clean up the listener
@@ -33,7 +35,7 @@ export default function SplashScreenPage({ onFinish }) {
       progress.removeListener(listener);
       progress.removeAllListeners();
     };
-  }, []);
+  }, [isLoading]);
 
   return (
     <View style={styles.container}>

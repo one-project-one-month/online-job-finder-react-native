@@ -31,7 +31,7 @@ export default function HomePage() {
           <VStack>
             <Text>Welcome Back!</Text>
             <Text size="xl" bold>
-              Aung Kyaw Moe 👋
+              Htet Myat 👋
             </Text>
           </VStack>
           <Pressable>

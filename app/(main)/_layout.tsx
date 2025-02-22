@@ -12,7 +12,7 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { useSession } from "@/provider/ctx";
-import { Text } from "react-native";
+import { ActivityIndicator, Text, View } from "react-native";
 import useOnboardState from "@/store/useOnboardState";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -25,7 +25,11 @@ export default function RootLayout() {
 
   // You can keep the splash screen open, or render a loading screen like we do here.
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size={"large"} />
+      </View>
+    );
   }
 
   if (!isOnboarded) {
