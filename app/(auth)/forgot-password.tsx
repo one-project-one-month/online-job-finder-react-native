@@ -30,7 +30,7 @@ export default function ForgotPassword() {
   const handleSignIn = async (data: ForgotPasswordSchemaType) => {
     // Navigate after signing in. You may want to tweak this to ensure sign-in is
     // successful before navigating.
-    // router.replace("/");
+    router.replace("/confirm-reset");
     console.log(data);
   };
   return (

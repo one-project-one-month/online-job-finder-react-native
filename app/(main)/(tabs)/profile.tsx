@@ -1,11 +1,11 @@
 import { ScrollView, StyleSheet } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import SafeView from "@/components/common/SafeView";
 import { VStack } from "@/components/ui/vstack";
 import { HStack } from "@/components/ui/hstack";
 import { Box } from "@/components/ui/box";
 import { Text } from "@/components/ui/text";
-import { BadgeCheck } from "lucide-react-native";
+import { BadgeCheck, Settings } from "lucide-react-native";
 import {
   Avatar,
   AvatarBadge,
@@ -16,19 +16,29 @@ import ArrowLeftIcon from "@/assets/images/icons/BackIconSvg";
 import { Pressable } from "@/components/ui/pressable";
 import SectionTitle from "@/components/common/SectionTitle";
 import { router } from "expo-router";
+import { useNavigation } from "expo-router";
+import useRemoveTabBar from "@/hooks/useRemoveTabBar";
 
 export default function ProfilePage() {
+  const navigation = useNavigation();
+  useRemoveTabBar();
+
   return (
     <SafeView>
-      <ScrollView style={{ paddingVertical: 20 }}>
-        <VStack space="2xl" className=" py-5">
+      <ScrollView style={{ paddingVertical: 24 }}>
+        <VStack space="2xl" className="">
           <VStack space="xl" className=" px-6">
             <VStack space="xs">
               <HStack className=" justify-between items-center">
                 <ArrowLeftIcon onPress={() => router.back()} />
-                <Pressable>
-                  <Text>Edit</Text>
-                </Pressable>
+                <HStack space="xl" className=" items-center">
+                  <Pressable>
+                    <Text>Edit Profile</Text>
+                  </Pressable>
+                  <Pressable onPress={() => router.push("/setting")}>
+                    <Settings size={22} color={"#2C557D"} />
+                  </Pressable>
+                </HStack>
               </HStack>
               <Avatar size="xl" className=" mx-auto">
                 <AvatarFallbackText>Jane Doe</AvatarFallbackText>

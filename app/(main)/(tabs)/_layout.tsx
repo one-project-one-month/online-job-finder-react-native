@@ -51,12 +51,18 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="(setting)/setting"
+        name="(company)/company-list-screen"
         options={{
-          title: "Setting",
+          title: "Company List",
           tabBarIcon: ({ focused, size, color }) => (
             <CategoryIconSvg focused={focused} size={size} color={color} />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="(setting)/setting"
+        options={{
+          href: null,
         }}
       />
       <Tabs.Screen
