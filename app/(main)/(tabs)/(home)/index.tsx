@@ -17,8 +17,9 @@ import { Input, InputField, InputIcon, InputSlot } from "@/components/ui/input";
 import { SearchIcon } from "@/components/ui/icon";
 import { Button, ButtonIcon } from "@/components/ui/button";
 import SectionTitle from "@/components/common/SectionTitle";
-import { SlidersHorizontal } from "lucide-react-native";
+import { Search, SlidersHorizontal } from "lucide-react-native";
 import ViewPager from "@/components/screens/home/ViewPager";
+import { ProfileIconDrawer } from "@/components/screens/home/ProfileIconDrawer";
 
 export default function HomePage() {
   useEffect(() => {
@@ -34,40 +35,20 @@ export default function HomePage() {
               Htet Myat 👋
             </Text>
           </VStack>
-          <Pressable onPress={() => router.push("/profile")}>
-            <Avatar size="md">
-              <AvatarFallbackText>Jane Doe</AvatarFallbackText>
-              <AvatarImage
-                source={{
-                  uri: "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                }}
-                className=" w-[50px] h-[50px]"
-              />
-              <AvatarBadge size="lg" className=" top-0 -right-2" />
-            </Avatar>
-          </Pressable>
+          <ProfileIconDrawer />
         </HStack>
         <HStack className="px-6" space="md">
-          <Input
-            variant="outline"
-            size="md"
-            isDisabled={false}
-            isInvalid={false}
-            isReadOnly={false}
-            isFocused={false}
-            className=" h-[40px] bg-[#F2F2F3] rounded-xl flex-auto"
-          >
-            <InputSlot className="pl-3">
-              <InputIcon as={SearchIcon} />
-            </InputSlot>
-            <InputField placeholder="Enter Text here..." />
-          </Input>
-          <Button
-            size="lg"
-            className="rounded-xl h-[40px] bg-[#F2F2F3] border border-gray-300"
-          >
-            <ButtonIcon as={SlidersHorizontal} style={{ color: "#222" }} />
-          </Button>
+          <Pressable className=" w-full" onPress={() => router.push("/search")}>
+            <HStack
+              space="sm"
+              className=" h-[50px] items-center bg-gray-100 rounded-[10px] px-3"
+            >
+              <Search size={20} color="#9ca3af" />
+              <Text className=" text-gray-500">
+                Search a job or position ...
+              </Text>
+            </HStack>
+          </Pressable>
         </HStack>
         <VStack space="md">
           <SectionTitle title="Popular" actionText="See All" />

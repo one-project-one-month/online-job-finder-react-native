@@ -27,7 +27,7 @@ export default function SettingScreen() {
     <SafeView>
       <VStack className=" p-6 mb-8" space="4xl">
         <HStack className=" justify-between items-center">
-          <Pressable onPress={() => router.push("/profile")}>
+          <Pressable onPress={() => router.back()}>
             <ArrowLeftIcon />
           </Pressable>
           <Text size="xl" className=" font-semibold">
