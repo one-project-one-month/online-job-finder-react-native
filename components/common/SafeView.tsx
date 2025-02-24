@@ -1,10 +1,12 @@
 import { ScrollView, StyleSheet } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 export default function SafeView({ children }: { children: React.ReactNode }) {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="dark" />
       <ScrollView showsVerticalScrollIndicator={false} style={styles.content}>
         {children}
       </ScrollView>

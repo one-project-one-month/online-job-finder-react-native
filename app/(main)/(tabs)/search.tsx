@@ -33,7 +33,7 @@ export default function SearchScreen() {
             isReadOnly={false}
             className=" h-14 rounded-[10px]"
           >
-            <InputField placeholder="Search here..." />
+            <InputField placeholder="Search here..." returnKeyType="search" />
           </Input>
         </Box>
       </VStack>

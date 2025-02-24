@@ -11,6 +11,7 @@ import { Pressable } from "@/components/ui/pressable";
 import { Text } from "@/components/ui/text";
 import { VStack } from "@/components/ui/vstack";
 import { useFocusEffect } from "@react-navigation/native";
+import { Link } from "expo-router";
 import { Bookmark, BookmarkCheck } from "lucide-react-native";
 import { useCallback, useRef, useState } from "react";
 import PagerView from "react-native-pager-view";
@@ -114,14 +115,21 @@ export default function ViewPager() {
                         {/* <AvatarBadge size="lg" className=" top-0 -right-2" /> */}
                       </Avatar>
                     </Pressable>
-                    <VStack className=" pb-1">
-                      <Text size="lg" className=" font-semibold text-white">
-                        {job.title}
-                      </Text>
-                      <Text size="sm" className=" text-white">
-                        {job.company}
-                      </Text>
-                    </VStack>
+                    <Link
+                      href={{
+                        pathname: "/detail/[id]",
+                        params: { id: idx },
+                      }}
+                    >
+                      <VStack className=" pb-1">
+                        <Text size="lg" className=" font-semibold text-white">
+                          {job.title}
+                        </Text>
+                        <Text size="sm" className=" text-white">
+                          {job.company}
+                        </Text>
+                      </VStack>
+                    </Link>
                   </HStack>
                   <Pressable className=" pt-1">
                     {job.isBookmarked ? (

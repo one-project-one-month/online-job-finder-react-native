@@ -24,7 +24,7 @@ import { ProfileIconDrawer } from "@/components/screens/home/ProfileIconDrawer";
 export default function HomePage() {
   useEffect(() => {
     setStatusBarStyle("dark");
-  }, [router]);
+  }, []);
   return (
     <SafeView>
       <VStack space="3xl">

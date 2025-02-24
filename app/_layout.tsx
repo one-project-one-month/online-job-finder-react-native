@@ -5,6 +5,7 @@ import { SessionProvider } from "@/provider/ctx";
 import { useFonts } from "expo-font";
 import { Slot, SplashScreen } from "expo-router";
 import { useEffect, useState } from "react";
+import ModelProvider from "@/provider/ModelProvider";
 
 export default function Root() {
   const [isReady, setIsReady] = useState(false);
@@ -34,7 +35,9 @@ export default function Root() {
   return (
     <GluestackUIProvider mode="light">
       <SessionProvider>
-        <Slot />
+        <ModelProvider>
+          <Slot />
+        </ModelProvider>
       </SessionProvider>
     </GluestackUIProvider>
   );
