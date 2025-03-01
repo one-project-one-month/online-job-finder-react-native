@@ -10,9 +10,6 @@ import SaveIconSvg from "@/assets/images/icons/SaveIconSvg";
 import CategoryIconSvg from "@/assets/images/icons/CategoryIconSvg";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  const showHiddenTab = false;
-
   return (
     <Tabs
       screenOptions={{

@@ -18,6 +18,7 @@ import { HStack } from "@/components/ui/hstack";
 import { Pressable } from "@/components/ui/pressable";
 import { Text } from "@/components/ui/text";
 import { VStack } from "@/components/ui/vstack";
+import { AccUserName } from "@/constants/user-data";
 import { router } from "expo-router";
 import {
   BadgeCheck,
@@ -81,7 +82,7 @@ export function ProfileIconDrawer() {
                   <AvatarBadge className=" top-0 -right-2" />
                 </Avatar>
                 <Text size="lg" className=" font-semibold text-center">
-                  Htet Myat
+                  {AccUserName}
                 </Text>
                 <HStack space="md" className=" justify-center items-center">
                   <Text className=" pb-1 text-gray-400">

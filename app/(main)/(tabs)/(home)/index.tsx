@@ -11,11 +11,13 @@ import { Search } from "lucide-react-native";
 import ViewPager from "@/components/screens/home/ViewPager";
 import { ProfileIconDrawer } from "@/components/screens/home/ProfileIconDrawer";
 import PopularJobs from "@/components/screens/home/PopularJobs";
+import { AccUserName } from "@/constants/user-data";
 
 export default function HomePage() {
   // useEffect(() => {
   //   setStatusBarStyle("dark");
   // }, []);
+
   return (
     <SafeView>
       <VStack space="3xl">
@@ -23,7 +25,10 @@ export default function HomePage() {
           <VStack>
             <Text>Welcome Back!</Text>
             <Text size="xl" className=" text-primary-main" bold>
-              Htet Myat 👋
+              {AccUserName.split(" ").length > 4
+                ? AccUserName.split(" ").splice(0, 3).join(" ") + " ..."
+                : AccUserName}{" "}
+              👋
             </Text>
           </VStack>
           <ProfileIconDrawer />
@@ -45,11 +50,11 @@ export default function HomePage() {
           <SectionTitle title="Latest Jobs" actionText="See All" />
           <ViewPager />
         </VStack>
-        <VStack space="md">
+        <VStack space="lg">
           <SectionTitle title="Popular Jobs" actionText="See All" />
           <PopularJobs />
         </VStack>
-        <VStack space="md">
+        <VStack space="lg">
           <SectionTitle title="Recommended Jobs" actionText="See All" />
           <PopularJobs />
         </VStack>

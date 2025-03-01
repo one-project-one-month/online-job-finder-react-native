@@ -15,7 +15,7 @@ import { Bookmark } from "lucide-react-native";
 export default function PopularJobs() {
   const fakeArr = Array.from({ length: 6 });
   return (
-    <Box className=" flex flex-row flex-wrap justify-between px-6 gap-3">
+    <Box className=" flex flex-row flex-wrap justify-between px-6 gap-5">
       {fakeArr.map((_, idx) => (
         <View
           key={idx}
@@ -61,15 +61,18 @@ export default function PopularJobs() {
             }}
             className=" mt-1"
           >
-            <Text size="sm" className=" font-bold text-primary-main truncate">
+            <Text
+              size="md"
+              className=" font-semibold text-primary-main truncate"
+            >
               Assistant HR & Admin Manager (Female-2)
             </Text>
           </Link>
           <HStack className=" justify-between mt-1">
-            <Text size="sm" className=" font-medium text-gray-400">
+            <Text size="sm" className=" text-gray-400">
               Full-Time
             </Text>
-            <Text size="sm" className=" font-medium text-gray-400">
+            <Text size="sm" className=" text-gray-400">
               Junior
             </Text>
           </HStack>

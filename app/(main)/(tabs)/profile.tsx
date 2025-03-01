@@ -18,6 +18,7 @@ import SectionTitle from "@/components/common/SectionTitle";
 import { router } from "expo-router";
 import { useNavigation } from "expo-router";
 import useRemoveTabBar from "@/hooks/useRemoveTabBar";
+import { AccUserName } from "@/constants/user-data";
 
 export default function ProfilePage() {
   const navigation = useNavigation();
@@ -51,7 +52,7 @@ export default function ProfilePage() {
                 <AvatarBadge className=" top-0 -right-2" />
               </Avatar>
               <Text size="xl" className=" font-semibold text-center">
-                Htet Myat
+                {AccUserName}
               </Text>
               <HStack space="md" className=" justify-center items-center">
                 <Text className=" pb-1 text-gray-400">Frontend Developer</Text>
