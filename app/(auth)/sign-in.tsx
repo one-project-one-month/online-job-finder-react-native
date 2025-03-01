@@ -17,11 +17,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormControl } from "@/components/ui/form-control";
 import { Input, InputField, InputIcon, InputSlot } from "@/components/ui/input";
 import { EyeIcon, EyeOffIcon, KeyIcon, Mail } from "lucide-react-native";
+import useJobTypeState from "@/store/useJobTypeState";
 
 export default function SignIn() {
   const navigation = useNavigation();
   const { isOnboarded } = useOnboardState();
   const { signIn, session } = useSession();
+  const { jobType, jobRole } = useJobTypeState();
   const [showPassword, setShowPassword] = React.useState(false);
 
   const {
@@ -33,10 +35,14 @@ export default function SignIn() {
   });
   const handleSignIn = async (data: SignInSchemaType) => {
     signIn();
-    // Navigate after signing in. You may want to tweak this to ensure sign-in is
-    // successful before navigating.
-    router.replace("/");
-    // console.log(data);
+    if (jobType && jobRole) {
+      // Navigate after signing in. You may want to tweak this to ensure sign-in is
+      // successful before navigating.
+      router.replace("/");
+      // console.log(data);
+    } else {
+      router.replace("/job-type");
+    }
   };
 
   const handleState = () => {

@@ -13,6 +13,7 @@ import { CloseIcon, SearchIcon } from "@/components/ui/icon";
 import { X } from "lucide-react-native";
 import SectionTitle from "@/components/common/SectionTitle";
 import PopularJobs from "@/components/screens/home/PopularJobs";
+import JobFilterIconSvg from "@/assets/images/icons/JobFilterIconSvg";
 
 export default function SearchScreen() {
   useRemoveTabBar();
@@ -28,25 +29,28 @@ export default function SearchScreen() {
           </Text>
           <Text></Text>
         </HStack>
-        <VStack space="lg">
-          <Box className=" px-6">
+        <VStack space="2xl">
+          <Box className=" px-6 flex flex-row gap-2">
             <Input
               variant="outline"
               size="md"
               isDisabled={false}
               isInvalid={false}
               isReadOnly={false}
-              className=" h-14 rounded-[10px]"
+              className=" flex-1  h-14 rounded-[10px]"
             >
               <InputSlot className="pl-3">
                 <InputIcon as={SearchIcon} />
               </InputSlot>
               <InputField placeholder="Search here..." returnKeyType="search" />
             </Input>
+            <Pressable className="w-14 h-14 rounded-[10px] border border-gray-200 items-center justify-center">
+              <JobFilterIconSvg />
+            </Pressable>
           </Box>
-          <VStack space="md" className=" px-6">
+          <VStack space="lg" className=" px-6">
             <Text className=" font-semibold">Recent Search</Text>
-            <VStack space="md" className="">
+            <VStack space="xl" className="">
               <HStack className=" justify-between items-center">
                 <Pressable>
                   <Text className=" text-gray-400">React Developer</Text>

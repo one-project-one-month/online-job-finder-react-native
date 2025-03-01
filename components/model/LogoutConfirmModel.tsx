@@ -12,16 +12,20 @@ import { Text } from "../ui/text";
 import { Button, ButtonText } from "../ui/button";
 import { useSession } from "@/provider/ctx";
 import useOnboardState from "@/store/useOnboardState";
+import useJobTypeState from "@/store/useJobTypeState";
 
 export default function LogoutConfirmModel() {
   const { signOut } = useSession();
   const { setIsOnboarded } = useOnboardState();
   const { isLogoutState, setIsLogout } = useLogoutState();
+  const { setJobRole, setJobType } = useJobTypeState();
   const handleSignOut = async () => {
     // The `app/(app)/_layout.tsx` will redirect to the sign-in screen.
     setIsOnboarded(false);
     signOut();
     setIsLogout(false);
+    setJobRole("");
+    setJobType("");
   };
   return (
     <AlertDialog
