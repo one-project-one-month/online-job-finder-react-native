@@ -1,37 +1,28 @@
-import { StyleSheet, View } from "react-native";
-import React, { useEffect } from "react";
+import { StyleSheet } from "react-native";
+import React from "react";
 import SafeView from "@/components/common/SafeView";
-import { setStatusBarStyle, StatusBar } from "expo-status-bar";
 import { router } from "expo-router";
 import { VStack } from "@/components/ui/vstack";
 import { HStack } from "@/components/ui/hstack";
 import { Text } from "@/components/ui/text";
-import {
-  Avatar,
-  AvatarBadge,
-  AvatarFallbackText,
-  AvatarImage,
-} from "@/components/ui/avatar";
 import { Pressable } from "@/components/ui/pressable";
-import { Input, InputField, InputIcon, InputSlot } from "@/components/ui/input";
-import { SearchIcon } from "@/components/ui/icon";
-import { Button, ButtonIcon } from "@/components/ui/button";
 import SectionTitle from "@/components/common/SectionTitle";
-import { Search, SlidersHorizontal } from "lucide-react-native";
+import { Search } from "lucide-react-native";
 import ViewPager from "@/components/screens/home/ViewPager";
 import { ProfileIconDrawer } from "@/components/screens/home/ProfileIconDrawer";
+import PopularJobs from "@/components/screens/home/PopularJobs";
 
 export default function HomePage() {
-  useEffect(() => {
-    setStatusBarStyle("dark");
-  }, []);
+  // useEffect(() => {
+  //   setStatusBarStyle("dark");
+  // }, []);
   return (
     <SafeView>
       <VStack space="3xl">
         <HStack className="px-6 pt-6 justify-between items-center">
           <VStack>
             <Text>Welcome Back!</Text>
-            <Text size="xl" bold>
+            <Text size="xl" className=" text-primary-main" bold>
               Htet Myat 👋
             </Text>
           </VStack>
@@ -51,8 +42,16 @@ export default function HomePage() {
           </Pressable>
         </HStack>
         <VStack space="md">
-          <SectionTitle title="Popular" actionText="See All" />
+          <SectionTitle title="Latest Jobs" actionText="See All" />
           <ViewPager />
+        </VStack>
+        <VStack space="md">
+          <SectionTitle title="Popular Jobs" actionText="See All" />
+          <PopularJobs />
+        </VStack>
+        <VStack space="md">
+          <SectionTitle title="Recommended Jobs" actionText="See All" />
+          <PopularJobs />
         </VStack>
       </VStack>
     </SafeView>

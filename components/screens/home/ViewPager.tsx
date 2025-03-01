@@ -91,10 +91,10 @@ export default function ViewPager() {
     }, [])
   );
   return (
-    <Box className=" h-[200px] px-6">
+    <Box className=" px-6">
       <PagerView
         ref={pageRef}
-        style={{ height: 200 }}
+        style={{ height: 155 }}
         initialPage={activeIndex}
       >
         {popularJobs.map((job, idx) => (

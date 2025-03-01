@@ -93,7 +93,9 @@ export default function ProfilePage() {
                 className="  rounded-[10px] p-3 "
               >
                 <HStack className=" justify-between">
-                  <Text className=" font-semibold">Mid Level Developer</Text>
+                  <Text size="md" className=" font-semibold">
+                    Mid Level Developer
+                  </Text>
                   <Text size="sm" className=" font-semibold">
                     Yangon, Dagon
                   </Text>
@@ -117,7 +119,9 @@ export default function ProfilePage() {
                 className="  rounded-[10px] p-3 "
               >
                 <HStack className=" justify-between">
-                  <Text className=" font-semibold">Computer Science</Text>
+                  <Text size="md" className=" font-semibold">
+                    Computer Science
+                  </Text>
                   <Text size="sm" className=" font-semibold">
                     Yangon, Hlaing
                   </Text>

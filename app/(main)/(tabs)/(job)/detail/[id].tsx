@@ -9,11 +9,12 @@ import { Pressable } from "@/components/ui/pressable";
 import { Text } from "@/components/ui/text";
 import { VStack } from "@/components/ui/vstack";
 import useRemoveTabBar from "@/hooks/useRemoveTabBar";
+import { useFocusEffect } from "@react-navigation/native";
 import { ImageBackground } from "expo-image";
-import { router, useFocusEffect } from "expo-router";
+import { router } from "expo-router";
 import { useLocalSearchParams } from "expo-router";
 import { setStatusBarStyle, StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { useState } from "react";
 import { Dimensions, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -21,15 +22,19 @@ const { width, height } = Dimensions.get("screen");
 
 export default function JobDetailScreen() {
   const { id } = useLocalSearchParams();
+  const [isLight, setIsLight] = useState(false);
   useRemoveTabBar();
   useFocusEffect(() => {
     setStatusBarStyle("light");
+    setIsLight(true);
     return () => {
       setStatusBarStyle("dark");
+      setIsLight(false);
     };
   });
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      {isLight && <StatusBar style="light" />}
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{
