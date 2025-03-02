@@ -139,6 +139,7 @@ export default function JobDetailScreen() {
           variant={"solid"}
           size={"lg"}
           className=" h-14 bg-[#356899] rounded-[10px] hover:bg-[#05405d] active:bg-[#05405d] focus:bg-[#05405d]"
+          onPress={() => router.push("/apply-success")}
         >
           <ButtonText className=" font-normal">Apply Now</ButtonText>
         </Button>

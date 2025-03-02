@@ -1,11 +1,7 @@
 import React from "react";
 import { Box } from "@/components/ui/box";
 import { Pressable } from "@/components/ui/pressable";
-import {
-  Avatar,
-  AvatarFallbackText,
-  AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Text } from "@/components/ui/text";
 import { HStack } from "@/components/ui/hstack";
 import { View } from "react-native";

@@ -24,7 +24,7 @@ export default function SearchScreen() {
           <Pressable onPress={() => router.back()}>
             <ArrowLeftIcon />
           </Pressable>
-          <Text size="lg" className=" font-semibold">
+          <Text size="xl" className=" font-semibold text-primary-main">
             Search
           </Text>
           <Text></Text>
@@ -49,7 +49,9 @@ export default function SearchScreen() {
             </Pressable>
           </Box>
           <VStack space="lg" className=" px-6">
-            <Text className=" font-semibold">Recent Search</Text>
+            <Text size="lg" className=" font-semibold">
+              Recent Search
+            </Text>
             <VStack space="xl" className="">
               <HStack className=" justify-between items-center">
                 <Pressable>
