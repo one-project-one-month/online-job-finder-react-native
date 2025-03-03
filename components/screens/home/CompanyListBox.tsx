@@ -20,13 +20,13 @@ export default function CompanyListBox() {
             }}
             className=" max-w-[100px] ml-6"
           >
-            <Card className=" w-full px-0 pb-0">
+            <Card className=" w-full px-0 pb-0 bg-transparent">
               <ExpoImage
                 source={require("@/assets/images/img/google.png")}
                 style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 25,
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
                   margin: "auto",
                 }}
               />

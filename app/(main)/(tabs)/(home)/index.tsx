@@ -39,7 +39,7 @@ export default function HomePage() {
           <Pressable className=" w-full" onPress={() => router.push("/search")}>
             <HStack
               space="sm"
-              className=" h-[50px] items-center bg-gray-100 rounded-[10px] px-3"
+              className=" h-[50px] items-center bg-white rounded-[10px] px-3"
             >
               <Search size={20} color="#9ca3af" />
               <Text className=" text-gray-500">

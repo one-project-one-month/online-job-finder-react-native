@@ -18,7 +18,7 @@ type CompanyCardProps = {
 export default function CompanyCard({ item }: CompanyCardProps) {
   return (
     <Pressable className=" flex-auto px-2">
-      <Card className="bg-gray-100">
+      <Card className="bg-white">
         <Avatar className="mr-4 w-[44px] h-[44px] mx-auto">
           <AvatarFallbackText>JD</AvatarFallbackText>
           <AvatarImage

@@ -11,8 +11,8 @@ import { Card } from "@/components/ui/card";
 
 export default function SmallJobCard({ idx }: { idx: number }) {
   return (
-    <Box className=" px-1">
-      <Card className=" w-full border border-gray-200">
+    <Box className="">
+      <Card className=" w-full border border-gray-200 bg-[#FEFEFF]">
         <Pressable>
           <HStack className=" justify-between">
             <HStack space="sm" className=" items-center">
@@ -24,14 +24,17 @@ export default function SmallJobCard({ idx }: { idx: number }) {
                 {/* <AvatarBadge size="lg" className=" top-0 -right-2" /> */}
               </Avatar>
               <Box>
-                <Text size="sm" className=" font-medium line-clamp-1">
-                  Myanmar Tech
+                <Text size="sm" className=" flex-1 font-medium line-clamp-1">
+                  Myanmar Technology
                 </Text>
                 <Text size="xs" className=" text-gray-400">
                   2 days ago
                 </Text>
               </Box>
             </HStack>
+            <Pressable className=" pt-1">
+              <Bookmark size={20} color="#2C557D" />
+            </Pressable>
           </HStack>
         </Pressable>
         <Link
@@ -42,10 +45,10 @@ export default function SmallJobCard({ idx }: { idx: number }) {
           className=" mt-1"
         >
           <Text
-            size="sm"
+            // size="sm"
             className=" font-semibold text-primary-main line-clamp-2"
           >
-            Assistant HR & Admin Manager (Female-2)
+            Frontend Developer (male-3)
           </Text>
         </Link>
         <HStack className=" justify-between mt-1">

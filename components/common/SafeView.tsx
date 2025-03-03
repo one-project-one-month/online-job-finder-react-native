@@ -17,7 +17,7 @@ export default function SafeView({ children }: { children: React.ReactNode }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#F4F8FB",
   },
   content: {
     flex: 1,

@@ -20,13 +20,13 @@ export default function JobCard({ idx }: { idx: number }) {
         borderLeftWidth: 4,
         borderLeftColor: "#5C93C7",
         boxShadow: "0px 1px 2px rgba(0, 0, 0, 0.05)",
-        // backgroundColor: "#EFF4F9",
+        backgroundColor: "#fff",
       }}
     >
       <Pressable>
         <HStack className=" justify-between">
           <HStack space="sm" className=" items-center">
-            <Avatar size="md">
+            <Avatar size="sm">
               {/* <AvatarFallbackText>Jane Doe</AvatarFallbackText> */}
               <AvatarImage source={require("@/assets/images/react-logo.png")} />
               {/* <AvatarBadge size="lg" className=" top-0 -right-2" /> */}
@@ -57,10 +57,10 @@ export default function JobCard({ idx }: { idx: number }) {
         </Text>
       </Link>
       <HStack className=" justify-between mt-1">
-        <Text size="sm" className=" text-gray-400">
+        <Text size="xs" className=" text-gray-400">
           Full-Time
         </Text>
-        <Text size="sm" className=" text-gray-400">
+        <Text size="xs" className=" text-gray-400">
           Junior
         </Text>
       </HStack>
