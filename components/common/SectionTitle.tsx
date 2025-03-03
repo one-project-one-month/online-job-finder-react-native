@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react-native";
 import { HStack } from "../ui/hstack";
 import { Pressable } from "../ui/pressable";
 import { Text } from "../ui/text";
@@ -18,8 +19,11 @@ export default function SectionTitle({
       <Text size="lg" className=" font-semibold">
         {title}
       </Text>
-      <Pressable>
-        <Text className=" text-[#95969D]">{actionText}</Text>
+      <Pressable className="">
+        <Text className=" text-[#95969D] flex-row items-center gap-2">
+          {actionText}
+          <ChevronRight size={16} color="#95969D" />
+        </Text>{" "}
       </Pressable>
     </HStack>
   );

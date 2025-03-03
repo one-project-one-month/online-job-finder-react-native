@@ -12,6 +12,8 @@ import ViewPager from "@/components/screens/home/ViewPager";
 import { ProfileIconDrawer } from "@/components/screens/home/ProfileIconDrawer";
 import PopularJobs from "@/components/screens/home/PopularJobs";
 import { AccUserName } from "@/constants/user-data";
+import CompanyListBox from "@/components/screens/home/CompanyListBox";
+import RecommendedJobs from "@/components/screens/home/RecommendedJobs";
 
 export default function HomePage() {
   // useEffect(() => {
@@ -20,7 +22,7 @@ export default function HomePage() {
 
   return (
     <SafeView>
-      <VStack space="3xl">
+      <VStack space="3xl" className=" pb-10">
         <HStack className="px-6 pt-6 justify-between items-center">
           <VStack>
             <Text>Welcome Back!</Text>
@@ -46,17 +48,21 @@ export default function HomePage() {
             </HStack>
           </Pressable>
         </HStack>
-        <VStack space="md">
+        <VStack space="lg" className=" mt-2">
           <SectionTitle title="Latest Jobs" actionText="See All" />
           <ViewPager />
         </VStack>
-        <VStack space="lg">
+        <VStack space="lg" className=" mt-2">
           <SectionTitle title="Popular Jobs" actionText="See All" />
           <PopularJobs />
         </VStack>
+        <VStack className=" mt-2">
+          <SectionTitle title="Company" actionText="See All" />
+          <CompanyListBox />
+        </VStack>
         <VStack space="lg">
           <SectionTitle title="Recommended Jobs" actionText="See All" />
-          <PopularJobs />
+          <RecommendedJobs />
         </VStack>
       </VStack>
     </SafeView>
